@@ -1,0 +1,46 @@
+{
+  "projectType": "application",
+  "root": "apps/task-manager-mobile",
+  "sourceRoot": "apps/task-manager-mobile/src",
+  "prefix": "app",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "options": {
+        "outputPath": "dist/apps/task-manager-mobile",
+        "index": "apps/task-manager-mobile/src/index.html",
+        "main": "apps/task-manager-mobile/src/main.ts",
+        "polyfills": "apps/task-manager-mobile/src/polyfills.ts",
+        "tsConfig": "apps/task-manager-mobile/tsconfig.app.json",
+        "assets": [
+          "apps/task-manager-mobile/src/favicon.ico",
+          "apps/task-manager-mobile/src/assets"
+        ],
+        "styles": ["apps/task-manager-mobile/src/global.scss"],
+        "scripts": []
+      }
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "options": {
+        "buildTarget": "task-manager-mobile:build",
+        "port": 4300
+      }
+    },
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "main": "apps/task-manager-mobile/src/test.ts",
+        "polyfills": "apps/task-manager-mobile/src/polyfills.ts",
+        "tsConfig": "apps/task-manager-mobile/tsconfig.spec.json",
+        "karmaConfig": "apps/task-manager-mobile/karma.conf.js",
+        "styles": ["apps/task-manager-mobile/src/global.scss"],
+        "scripts": [],
+        "assets": [
+          "apps/task-manager-mobile/src/favicon.ico",
+          "apps/task-manager-mobile/src/assets"
+        ]
+      }
+    }
+  }
+}
